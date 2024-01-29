@@ -1,5 +1,6 @@
 # Documentation
-Every pixel is an instruction, it is read from left to right.
+Every pixel of an image is an instruction, The instruction type of each pixel is defined by its Blue channel. the image is read from left to right.
+
 R: Input 1
 
 G: Input 2
