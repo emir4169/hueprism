@@ -15,8 +15,6 @@ def get_rgb_arrays(img):
     return r_array, g_array, b_array
 def process_pixel(r, g, b, ip=instruction_pointer, pd=pointer_direction, stack=stack):
     match (b):
-        case 0:
-            [ip + pd, pd]
         case 2:
             stack.append((r or stack.pop()) + (g or stack.pop()))
         case 3:
