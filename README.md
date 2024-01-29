@@ -1,4 +1,5 @@
 # Documentation
+Every pixel is an instruction, it is read from left to right.
 R: Input 1
 
 G: Input 2
