@@ -29,8 +29,6 @@ All undefined functions are simply reserved and will add R and G to the stack.
 
 10: Outputs (Input 1) as a ASCII character.
 
-176: Outputs "HOW DARE YOU CALL THIS VERY SPECIFIC FUNCTION IN YOUR CODE" 10 times.
-
 250: Skip next instruction if Input 1 is zero.
 
 251: changes pointer move direction to be to the down
