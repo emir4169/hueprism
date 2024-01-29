@@ -5,7 +5,9 @@ R: Input 1
 G: Input 2
 
 B: Instruction Type
-If R or G is zero then it is replaced with a value from the stack 
+
+If R or G is zero then it is replaced with a value from the stack
+
 All undefined functions are simply reserved and will add R and G to the stack.
 
 0: noop
