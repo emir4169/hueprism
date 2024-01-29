@@ -1,5 +1,5 @@
 # Documentation
-Programs are written as images. Every pixel of an image is an instruction, The instruction type of each pixel is defined by its Blue channel. the image is read from left to right.
+In HuePrism, programs are given as 24-bit images. The values of the red (R), green (G), and blue (B) channels for each pixel, ranging from 0 to 255, make up the opcode and parameters for each instruction in the language. Each pixel is its own instruction, and they are executed in left to right.
 
 R: Input 1
 
