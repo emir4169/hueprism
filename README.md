@@ -1,5 +1,7 @@
 # Documentation
-In HuePrism, programs are given as 24-bit images. The values of the red (R), green (G), and blue (B) channels for each pixel, ranging from 0 to 255, make up the opcode and parameters for each instruction in the language. Each pixel is its own instruction, and they are executed in left to right.
+The direction pointer always starts at the upper-left-most pixel, and always starts facing right.
+
+In HuePrism, programs are given as 24-bit images. The values of the red (R), green (G), and blue (B) channels for each pixel, ranging from 0 to 255, make up the opcode and parameters for each instruction in the language. Each pixel is its own instruction.
 
 R: Input 1
 
@@ -31,12 +33,12 @@ All undefined functions are simply reserved and will add R and G to the stack.
 
 250: Skip next instruction if Input 1 is zero.
 
-251: move instruction pointer down
+251: changes pointer move direction to be to the down
 
-252: move instruction pointer up
+252: changes pointer move direction to be to the up
 
-253: move instruction pointer left
+253: changes pointer move direction to be to the left
 
-254: move instruction pointer right
+254: changes pointer move direction to be to the right
 
 255: end program
