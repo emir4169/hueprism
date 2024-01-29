@@ -1,5 +1,5 @@
 # Documentation
-Every pixel of an image is an instruction, The instruction type of each pixel is defined by its Blue channel. the image is read from left to right.
+Programs are written as images. Every pixel of an image is an instruction, The instruction type of each pixel is defined by its Blue channel. the image is read from left to right.
 
 R: Input 1
 
