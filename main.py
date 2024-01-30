@@ -29,6 +29,8 @@ def process_pixel(r, g, b, ip=instruction_pointer, pd=pointer_direction, stack=s
             print(r or stack.pop(), end='')
         case 10:
             print(chr(r or stack.pop()), end='')
+        case 249:
+            stack.pop()
         case 250:
             if (r or stack.pop()) == 0:
                 ip += (pd*2)
@@ -58,12 +60,12 @@ if len(sys.argv) != 2:
     print("6: (Input 1) Modulo (Input 2)")
     print("7: Outputs (Input 1) as a number.")
     print("10: Outputs (Input 1) as a ASCII character.")
-
-    print("251: Skip next instruction if Input 1 is zero.")
-    print("252: move instruction pointer down")
-    print("253: move instruction pointer up")
-    print("254: move instruction pointer left")
-    print("255: move instruction pointer right")
+    print("250: Skips next instruction if (Input 1) is zero.")
+    print("249: Discards a value from the stack")
+    print("251: move instruction pointer down")
+    print("252: move instruction pointer up")
+    print("253: move instruction pointer left")
+    print("254: move instruction pointer right")
     print("255: end program")
     print("Anyway, quitting execution because you didn't give me an image.")
     sys.exit(1)
@@ -71,4 +73,4 @@ image_path = sys.argv[1]
 r_values, g_values, b_values = get_rgb_arrays((Image.open(image_path)))
 for y in range(len(r_values)):
     for x in range(len(r_values[y])):
-        instruction_pointer, pointer_direction = process_pixel(r_values[y][x], g_values[y][x], b_values[y][x], instruction_pointer, pointer_direction, stack)
+        instruction_pointer, pointer_direction = process_pixel(r_values[y][x], g_values[y][x], b_values[y][x])
