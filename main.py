@@ -31,11 +31,17 @@ def process_pixel(r, g, b, ip=instruction_pointer, pd=pointer_direction, stack=s
             print(r or stack.pop(), end='')
         case 10:
             print(chr(r or stack.pop()), end='')
-        case 250:
-            stack.pop()
+
+        case 248:
+            a = stack.pop()
+            stack.append(a)
+            stack.append(a)
         case 249:
             if (r or stack.pop()) == 0:
                 ip += (pd*2)
+        
+        case 250:
+            stack.pop()
         case 251:
             pd = [0, -1]
         case 252:
@@ -51,25 +57,7 @@ def process_pixel(r, g, b, ip=instruction_pointer, pd=pointer_direction, stack=s
             stack.append(g)
     return [ip + pd, pd]
 if len(sys.argv) != 2:
-    print("R: Input 1 or Variable Value)")
-    print("G: Input 2 or Variable Color)")
-    print("B: Instruction Type)")
-    print("0: noop")
-    print("2: Add (Input 1) and (Input 2)")
-    print("3: Subtract (Input 1) from (Input 2)")
-    print("4: Divide (Input 1) from (Input 2)")
-    print("5: Multiply (Input 2) from (Input 1)")
-    print("6: (Input 1) Modulo (Input 2)")
-    print("7: Outputs (Input 1) as a number.")
-    print("10: Outputs (Input 1) as a ASCII character.")
-    print("249: Skips next instruction if (Input 1) is zero.")
-    print("250: Discards a value from the stack")
-    print("251: move instruction pointer down")
-    print("252: move instruction pointer up")
-    print("253: move instruction pointer left")
-    print("254: move instruction pointer right")
-    print("255: end program")
-    print("Anyway, quitting execution because you didn't give me an image.")
+    print("I'm quitting execution because you didn't give me an image. There used to be documentation here, but i cant keep up with writing two of them.")
     sys.exit(1)
 image_path = sys.argv[1]
 r_values, g_values, b_values = get_rgb_arrays((Image.open(image_path)))
