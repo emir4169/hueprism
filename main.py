@@ -15,6 +15,8 @@ def get_rgb_arrays(img):
     return r_array, g_array, b_array
 def process_pixel(r, g, b, ip=instruction_pointer, pd=pointer_direction, stack=stack):
     match (b):
+        case 0:
+            [ip + pd, pd] # "dead code" -someone (they are utterly wrong, as this is a noop instruction.)
         case 2:
             stack.append((r or stack.pop()) + (g or stack.pop()))
         case 3:
@@ -29,9 +31,9 @@ def process_pixel(r, g, b, ip=instruction_pointer, pd=pointer_direction, stack=s
             print(r or stack.pop(), end='')
         case 10:
             print(chr(r or stack.pop()), end='')
-        case 249:
-            stack.pop()
         case 250:
+            stack.pop()
+        case 249:
             if (r or stack.pop()) == 0:
                 ip += (pd*2)
         case 251:
@@ -52,7 +54,7 @@ if len(sys.argv) != 2:
     print("R: Input 1 or Variable Value)")
     print("G: Input 2 or Variable Color)")
     print("B: Instruction Type)")
-    print()
+    print("0: noop")
     print("2: Add (Input 1) and (Input 2)")
     print("3: Subtract (Input 1) from (Input 2)")
     print("4: Divide (Input 1) from (Input 2)")
@@ -60,8 +62,8 @@ if len(sys.argv) != 2:
     print("6: (Input 1) Modulo (Input 2)")
     print("7: Outputs (Input 1) as a number.")
     print("10: Outputs (Input 1) as a ASCII character.")
-    print("250: Skips next instruction if (Input 1) is zero.")
-    print("249: Discards a value from the stack")
+    print("249: Skips next instruction if (Input 1) is zero.")
+    print("250: Discards a value from the stack")
     print("251: move instruction pointer down")
     print("252: move instruction pointer up")
     print("253: move instruction pointer left")
