@@ -9,7 +9,7 @@ G: Input 2
 
 B: Instruction Type
 
-If R or G is zero then it is replaced with a value from the stack
+If R or G is zero then it is replaced with a value from the stack if possible.
 
 All undefined functions are simply reserved and will add R and G to the stack.
 
@@ -29,9 +29,11 @@ All undefined functions are simply reserved and will add R and G to the stack.
 
 10: Outputs (Input 1) as a ASCII character.
 
+248: Duplicates the first item in the stack.
+
 249: Skips next instruction if (Input 1) is zero.
 
-250: Discards a value from the stack
+250: Discards the first item in the stack.
 
 251: changes pointer move direction to be to the down
 
@@ -42,3 +44,5 @@ All undefined functions are simply reserved and will add R and G to the stack.
 254: changes pointer move direction to be to the right
 
 255: end program
+
+i really need to update this more
