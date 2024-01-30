@@ -29,7 +29,9 @@ All undefined functions are simply reserved and will add R and G to the stack.
 
 10: Outputs (Input 1) as a ASCII character.
 
-250: Skip next instruction if Input 1 is zero.
+249: Skips next instruction if (Input 1) is zero.
+
+250: Discards a value from the stack
 
 251: changes pointer move direction to be to the down
 
