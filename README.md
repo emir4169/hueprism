@@ -29,6 +29,8 @@ All undefined functions are simply reserved and will add R and G to the stack.
 
 10: Outputs (Input 1) as a ASCII character.
 
+247: Gets a input from the user and adds it to the stack. (The input only supports integers.)
+
 248: Duplicates the first item in the stack.
 
 249: Skips next instruction if (Input 1) is zero.

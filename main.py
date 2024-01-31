@@ -36,7 +36,10 @@ def process_pixel(r, g, b):
             print(r or stack.pop(), end='')
         case 10:
             print(chr(r or stack.pop()), end='')
-
+        case 247:
+            # Add to the stack the integer value of the input
+            print("Input: ", end='')
+            stack.append(int(input()))
         case 248:
             a = stack.pop()
             stack.extend([a, a])
