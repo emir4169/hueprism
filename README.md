@@ -33,7 +33,9 @@ All undefined functions are simply reserved and will add R and G to the stack.
 
 248: Duplicates the first item in the stack.
 
-249: Skips next instruction if (Input 1) is zero.
+50: Skips next instruction if (Input 1) is (Input 2).
+
+51: Skips next instruction if (Input 1) is zero.
 
 250: Discards the first item in the stack.
 

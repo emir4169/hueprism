@@ -43,7 +43,10 @@ def process_pixel(r, g, b):
         case 248:
             a = stack.pop()
             stack.extend([a, a])
-        case 249:
+        case 50:
+            if (r or stack.pop()) == g:
+                instruction_pointer = [instruction_pointer[0] + pointer_direction[0], instruction_pointer[1] + pointer_direction[1]]
+        case 51:
             if (r or stack.pop()) == 0:
                 instruction_pointer = [instruction_pointer[0] + pointer_direction[0], instruction_pointer[1] + pointer_direction[1]]
         case 250:
